@@ -12,6 +12,7 @@ router.get('/users', function(req, res) {
 
 // munchie routes
 router.post('/munchie', function(req, res) {
+  console.log(req.body);
   var { title, description, name, number} = req.body;
   console.log("Create new munchie", req.body);
 

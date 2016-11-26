@@ -5,22 +5,25 @@ export default Ember.Controller.extend({
     submit: function(e) {
       e.preventDefault();
 
-      var item = this.get('itemname');
+      var title = this.get('title');
       var description = this.get('description');
       var price = this.get('price');
       var name = this.get('sellername');
       var phonenumber = this.get('phonenumber');
 
-      var promise = $.ajax({
+      console.log(title, description, price);
+
+      var promise = Ember.$.ajax({
         type: 'post', //create
-        url: 'localhost:3000',
-        data: {
-          "item": item,
+        url: 'http://localhost:3000/munchie',
+        contentType: 'application/json',
+        data: JSON.stringify({
+          "title": "test",
           "description": description,
           "price": price,
           "name": name,
           "phone": phonenumber
-        }
+        })
       });
 
       promise.then((response) => {
@@ -33,12 +36,12 @@ export default Ember.Controller.extend({
         var listings = this.get('home.feed');
         // songs.pushObject(response.song);
         //modifies the same array, ember can't detect data has changed
-        var newListings = songs.concat(response.listing);
+        var newListings = listings.concat(response.listing);
         this.set('home.feed', newListings);
 
         //after creating a new array/setting, triggers ember to update
-      }, function() {
-        alert('error');
+      }, function(err) {
+        alert(err);
       });
 
       console.log("form submitted");
