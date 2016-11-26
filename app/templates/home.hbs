@@ -1,0 +1,14 @@
+<h1>nibble</h1>
+
+{{#link-to 'home.feed'}}feed{{/link-to}}
+{{#link-to 'home.faq'}}FAQ{{/link-to}}
+{{!-- {{#if session.isAuthenticated}} --}}
+  {{#link-to 'home.create'}}create{{/link-to}}
+  {{#link-to 'home.manage'}}manage{{/link-to}}
+  {{#link-to 'home.logout'}}logout{{/link-to}}
+  {{!-- make logout not route and destroy --}}
+  {{!-- <button {{action 'logout'}}>logout</button> --}}
+{{!-- {{else}} --}}
+  {{#link-to 'home.login'}}login{{/link-to}}
+{{!-- {{/if}} --}}
+{{outlet}}
