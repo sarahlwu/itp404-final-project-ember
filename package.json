@@ -40,5 +40,12 @@
     "ember-resolver": "^2.0.3",
     "ember-welcome-page": "^1.0.1",
     "loader.js": "^4.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "sequelize": "^3.27.0",
+    "sequelize-cli": "^2.4.0",
+    "sqlite3": "^3.1.8"
   }
 }
