@@ -23,7 +23,7 @@ router.post('/munchie', function(req, res) {
   });
 });
 
-router.post('/test/:title', function(req, res) {
+router.get('/test/:title', function(req, res) {
   var title = req.params.title;
   console.log("Create new munchi", title);
 
@@ -31,12 +31,13 @@ router.post('/test/:title', function(req, res) {
     title: title,
     description: "This is a new munchie, please eat me!",
     name: "Sarah Wu",
-    number: "301-222-3490"
+    number: "301-222-3490",
+    price: "69.69"
   })
   .then(function() {
     req.status(200);
   })
-  .catch(function(err) {
+  .catch(function(error) {
     res.status(400).send(error);
   });
 });

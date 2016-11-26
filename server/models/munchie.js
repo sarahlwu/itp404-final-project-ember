@@ -6,17 +6,17 @@ module.exports = function(sequelize, DataTypes) {
     number: { type: DataTypes.STRING, allowNull: false },
     imageUrl: { type: DataTypes.STRING, allowNull: true },
     price: { type: DataTypes.DECIMAL, allowNull: false }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        Munchie.belongsTo(models.User, {
-          onDelete: "CASCADE",
-          foreignKey: {
-            allowNull: false
-          }
-        });
-      }
-    }
+  // }, {
+  //   classMethods: {
+  //     associate: function(models) {
+  //       Munchie.belongsTo(models.User, {
+  //         onDelete: "CASCADE",
+  //         foreignKey: {
+  //           allowNull: false
+  //         }
+  //       });
+  //     }
+  //   }
   });
 
   return Munchie;
