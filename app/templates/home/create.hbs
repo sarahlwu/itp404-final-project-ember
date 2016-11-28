@@ -1,17 +1,17 @@
 
 <form onsubmit={{action "submit"}}>
   <label>what are you selling?</label>
-  <input type="text" name="title"><br>
+  {{ input type="text" value=title }}
 
   <label>how much are you selling for?</label>
-  <input type="text" name="price"><br>
+  {{ input type="text" value=price }}
 
   <label>item description</label>
-  <input type="text" name="description"><br>
+  {{ input type="text" value=description }}
 
   <h2>contact info</h2>
-  name: <input type="text" name="sellername"><br>
-  phone #: <input type="text" name="number"><br>
+  name: {{ input type="text" value=sellername }}
+  phone #: {{ input type="text" value=phonenumber }}
   <button type="submit">submit</button>
 </form>
 

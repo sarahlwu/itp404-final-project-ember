@@ -1,1 +1,15 @@
+<div class="feed">
+  {{#each model as |listing|}}
+  <div class="listing">
+    <div class="listing-image"></div>
+    <div class="listing-info">
+      <h2>{{listing.title}} - ${{listing.price}}</h2>
+      <p class="description">{{listing.description}}</p>
+      <p class="distance">0.6m</p>
+    </div>
+  </div>
+  {{else}}
+  <h2 class="error">no listings found D:</h2>
+  {{/each}}
+</div>
 {{outlet}}

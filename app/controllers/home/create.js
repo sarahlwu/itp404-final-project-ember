@@ -9,44 +9,40 @@ export default Ember.Controller.extend({
       var description = this.get('description');
       var price = this.get('price');
       var name = this.get('sellername');
-      var phonenumber = this.get('phonenumber');
-
-      console.log(title, description, price);
+      var number = this.get('phonenumber');
 
       var promise = Ember.$.ajax({
         type: 'post', //create
         url: 'http://localhost:3000/munchie',
         contentType: 'application/json',
         data: JSON.stringify({
-          "title": "test",
-          "description": description,
-          "price": price,
-          "name": name,
-          "phone": phonenumber
+          title,
+          description,
+          price,
+          name,
+          number
         })
       });
 
       promise.then((response) => {
         alert('yay');
-        this.set('itemname', null);
+        this.set('title', null);
         this.set('description', null);
         this.set('price', null);
         this.set('sellername', null);
         this.set('phonenumber', null);
-        var listings = this.get('home.feed');
+        var listings = this.get('model');
         // songs.pushObject(response.song);
         //modifies the same array, ember can't detect data has changed
-        var newListings = listings.concat(response.listing);
-        this.set('home.feed', newListings);
+        var newListings = listings.concat(response);
+        this.set('model', newListings);
+        this.transitionToRoute('home.feed');
 
         //after creating a new array/setting, triggers ember to update
       }, function(err) {
         alert(err);
       });
-
-      console.log("form submitted");
       // alert("posted successfully");
-      // this.transitionToRoute('home.feed');
       //nested route name
     }
   }

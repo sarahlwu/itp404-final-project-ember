@@ -13,32 +13,21 @@ router.get('/users', function(req, res) {
 // munchie routes
 router.post('/munchie', function(req, res) {
   console.log(req.body);
-  var { title, description, name, number} = req.body;
+  var { title, description, name, price, number } = req.body;
   console.log("Create new munchie", req.body);
 
   models.Munchie.create({
-    title: title,
-    description: description,
-    name: name,
-    number: number
-  });
-});
-
-router.get('/test/:title', function(req, res) {
-  var title = req.params.title;
-  console.log("Create new munchi", title);
-
-  models.Munchie.create({
-    title: title,
-    description: "This is a new munchie, please eat me!",
-    name: "Sarah Wu",
-    number: "301-222-3490",
-    price: "69.69"
+    title,
+    description,
+    name,
+    number,
+    price
   })
-  .then(function() {
-    req.status(200);
+  .then(function(munchie) {
+    res.status(200).json(munchie);
   })
-  .catch(function(error) {
+  .error(function(error) {
+    console.log('error')
     res.status(400).send(error);
   });
 });
