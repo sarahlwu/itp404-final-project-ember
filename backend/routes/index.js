@@ -1,5 +1,17 @@
 var models  = require('../models');
 var router = require('express').Router();
+var multer = require('multer');
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, __dirname + '/../uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+var upload = multer({ storage: storage });
 
 // user routes
 router.get('/users', function(req, res) {
@@ -11,17 +23,17 @@ router.get('/users', function(req, res) {
 });
 
 // munchie routes
-router.post('/munchie', function(req, res) {
-  console.log(req.body);
+router.post('/munchie', upload.single('image'), function(req, res) {
   var { title, description, name, price, number } = req.body;
-  console.log("Create new munchie", req.body);
+  var { filename } = req.file;
 
   models.Munchie.create({
     title,
     description,
     name,
     number,
-    price
+    price,
+    image: `${filename}`
   })
   .then(function(munchie) {
     res.status(200).json(munchie);

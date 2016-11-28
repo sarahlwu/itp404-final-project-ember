@@ -18,6 +18,7 @@ export default Ember.Controller.extend({
         type: 'post', //create
         url: 'http://localhost:3000/munchie',
         processData: false,
+        contentType: false,
         data: formData
       });
 

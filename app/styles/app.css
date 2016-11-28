@@ -73,6 +73,11 @@ nav a {
   float: left;
 }
 
+.listing-image img {
+  height: 100%;
+  width: 100%;
+}
+
 .listing-info {
   box-sizing: border-box;
   position: relative;

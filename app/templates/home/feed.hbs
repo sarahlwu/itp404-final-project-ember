@@ -1,7 +1,9 @@
 <div class="feed">
   {{#each model as |listing|}}
   <div class="listing">
-    <div class="listing-image"></div>
+    <div class="listing-image">
+      <img src="http://localhost:3000/uploads/{{listing.image}}" /> 
+    </div>
     <div class="listing-info">
       {{#link-to 'home.listing' listing.id}}
         <h2>{{listing.title}} - ${{listing.price}}</h2>

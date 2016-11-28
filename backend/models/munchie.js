@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     description: { type: DataTypes.TEXT, allowNull: false },
     name: { type: DataTypes.STRING, allowNull: false },
     number: { type: DataTypes.STRING, allowNull: false },
-    imageUrl: { type: DataTypes.STRING, allowNull: true },
+    image: { type: DataTypes.STRING, allowNull: true },
     price: { type: DataTypes.DECIMAL, allowNull: false }
   // }, {
   //   classMethods: {
