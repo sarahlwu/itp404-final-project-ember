@@ -9,11 +9,8 @@
   <label>item description</label>
   {{ input type="text" value=description }}
 
-  <form action="/pictures/upload" method="POST" enctype="multipart/form-data">
-    <label>select an image to upload:</label>
-    <input type="file" name="image">
-    <input type="submit" value="upload image">
-  </form>
+  <label>select an image to upload:</label>
+  {{ input type="file" value=image }}
 
   <h2>contact info</h2>
   name: {{ input type="text" value=sellername }}

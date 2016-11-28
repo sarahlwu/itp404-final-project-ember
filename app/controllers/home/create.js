@@ -5,24 +5,20 @@ export default Ember.Controller.extend({
     submit: function(e) {
       e.preventDefault();
 
-      var title = this.get('title');
-      var description = this.get('description');
-      var price = this.get('price');
-      var name = this.get('sellername');
-      var number = this.get('phonenumber');
-      var image = this.get('image');
+      var formData = new FormData();
+      formData.append("title", this.get('title'));
+      formData.append("description", this.get('description'));
+      formData.append("price", this.get('price'));
+      formData.append("name", this.get('sellername'));
+      formData.append("number", this.get('phonenumber'));
+      var fileInputElement = Ember.$("input[type=file]")[0];
+      formData.append("image", fileInputElement.files[0]);
 
       var promise = Ember.$.ajax({
         type: 'post', //create
         url: 'http://localhost:3000/munchie',
-        contentType: 'application/json',
-        data: JSON.stringify({
-          title,
-          description,
-          price,
-          name,
-          number
-        })
+        processData: false,
+        data: formData
       });
 
       promise.then((response) => {
