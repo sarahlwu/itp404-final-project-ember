@@ -3,7 +3,9 @@
   <div class="listing">
     <div class="listing-image"></div>
     <div class="listing-info">
-      <h2>{{listing.title}} - ${{listing.price}}</h2>
+      {{#link-to 'home.listing' listing.id}}
+        <h2>{{listing.title}} - ${{listing.price}}</h2>
+      {{/link-to}}
       <p class="description">{{listing.description}}</p>
       <p class="distance">0.6m</p>
     </div>

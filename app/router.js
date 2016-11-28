@@ -15,6 +15,7 @@ Router.map(function() {
     this.route('logout');
     this.route('manage');
     this.route('faq');
+    this.route('listing', { path: ':id'});
   });
 });
 

@@ -2,15 +2,45 @@
 
 body {
   font-family: sans-serif;
+  font-weight: bold;
+  background-color: #86BBD8;
+  color: #FFFFFF;
+  font-family:"bodyfont";
+}
+
+@font-face {
+	font-family: "bodyfont";
+	src: url('Infinity.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "header";
+	src: url('REIS- regular.ttf') format("truetype");
+}
+
+a:link {
+  color: #FFFFFF;
+}
+
+a:visited {
+  color: #BBCDE5;
 }
 
 header {
   max-width: 700px;
   margin: 0 auto;
+  font-size: 200%;
+  background-color: #1C5D99;
+  border: 2px solid white;
+  padding: 0 0 20px 0;
+  border-radius: 5px;
 }
 
-header h1 {
+h1 {
+  font-family: "header";
   text-align: center;
+  margin: 0.2em 0;
+  font-size: 3em;
 }
 
 nav {
@@ -30,17 +60,17 @@ nav a {
 
 .listing {
   margin: 10px 0;
-  border-radius: 6px;
-  border: 2px solid lightgrey;
+  border-radius: 20px;
+  border: 2px solid white;
   overflow: hidden;
+  background-color: #1C5D99;
 }
 
 .listing-image {
   width: 100px;
   height: 100px;
-  background-color: lightgrey;
+  background-color: white;
   float: left;
-  border-radius: 5px;
 }
 
 .listing-info {
@@ -53,6 +83,7 @@ nav a {
 }
 
 .listing-info h2 {
+  font-family: "header";
   margin: 0.5em 0;
 }
 
