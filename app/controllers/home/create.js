@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
       var price = this.get('price');
       var name = this.get('sellername');
       var number = this.get('phonenumber');
+      var image = this.get('image');
 
       var promise = Ember.$.ajax({
         type: 'post', //create
@@ -31,6 +32,7 @@ export default Ember.Controller.extend({
         this.set('price', null);
         this.set('sellername', null);
         this.set('phonenumber', null);
+        this.set('image', null);
         var listings = this.get('model');
         // songs.pushObject(response.song);
         //modifies the same array, ember can't detect data has changed
