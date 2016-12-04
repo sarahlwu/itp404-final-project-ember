@@ -1,9 +1,27 @@
-{{model.title}}
-{{model.description}}
-{{model.price}}
+<div class="individual-listing">
+  <div class="listing-image">
+    <img src="http://localhost:3000/uploads/{{model.image}}" />
+  </div>
+  
+  <div class="listing-container">
+    <label>item name</label>
+    {{model.title}}
+  </div>
 
-seller info
-{{model.name}}
-{{model.number}}
+  <div class="listing-container">
+    <label>item description</label>
+    {{model.description}}
+  </div>
+
+  <div class="listing-container">
+    <label>item price</label>
+    {{model.price}}
+  </div>
+
+  <div class="listing-container">
+    <label>seller info</label>
+    {{model.name}} - {{model.number}}
+  </div>
+</div>
 
 {{outlet}}

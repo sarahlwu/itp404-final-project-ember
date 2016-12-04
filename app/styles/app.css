@@ -103,3 +103,60 @@ nav a {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.create {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.create label {
+  display: block;
+  font-size: 1.5em;
+}
+
+.create input {
+  display: block;
+}
+
+.create .form-textbox {
+  margin: 15px 0;
+}
+
+.create h2 {
+  margin: 0 0;
+}
+
+.individual-listing {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.individual-listing .listing-container {
+  margin: 15px 0;
+}
+
+.individual-listing label {
+  display: block;
+  font-size: 1.5em;
+}
+
+.individual-listing .listing-image {
+  width: 300px;
+  height: 300px;
+  float: right;
+}
+
+.question {
+  display: block;
+  font-size: 1.5em;
+}
+
+.answer {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.faq-page {
+  width: 600px;
+  margin: 0 auto;
+}

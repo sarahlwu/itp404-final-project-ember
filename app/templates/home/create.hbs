@@ -1,21 +1,32 @@
 
-<form onsubmit={{action "submit"}}>
-  <label>what are you selling?</label>
-  {{ input type="text" value=title }}
+<form onsubmit={{action "submit"}} class="create">
+  <div class="form-textbox">
+    <label>what are you selling?</label>
+    {{ input type="text" value=title }}
+  </div>
+  <div class="form-textbox">
+    <label>how much are you selling for?</label>
+    {{ input type="text" value=price }}
+  </div>
+  <div class="form-textbox">
 
-  <label>how much are you selling for?</label>
-  {{ input type="text" value=price }}
+    <label>item description</label>
+    {{ input type="text" value=description }}
 
-  <label>item description</label>
-  {{ input type="text" value=description }}
+  </div>
+  <div class="form-textbox">
+    <label>select an image to upload:</label>
+    {{ input type="file" value=image }}
+  </div>
+  <div class="form-textbox">
+    <h2>contact info</h2>
+    name: {{ input type="text" value=sellername }}
+  </div>
 
-  <label>select an image to upload:</label>
-  {{ input type="file" value=image }}
-
-  <h2>contact info</h2>
-  name: {{ input type="text" value=sellername }}
-  phone #: {{ input type="text" value=phonenumber }}
-  <button type="submit">submit</button>
+  <div class="form-textbox">
+    phone #: {{ input type="text" value=phonenumber }}
+    <button type="submit">submit</button>
+  </div>
 </form>
 
 {{outlet}}
