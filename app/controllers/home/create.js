@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
 
       var promise = Ember.$.ajax({
         type: 'post', //create
-        url: 'http://localhost:3000/munchie',
+        url: 'http://104.131.156.142/munchie',
         processData: false,
         contentType: false,
         data: formData
